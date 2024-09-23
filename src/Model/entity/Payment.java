@@ -7,6 +7,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -17,7 +18,7 @@ import java.sql.Timestamp;
 
 public class Payment {
     private int paymentID;
-    private Timestamp paymentDate;
-    private double inventory;
-    private Invoice invoice1;
+    private LocalDateTime paymentDateTime;
+    private Invoice invoice;
+    private double amount;
 }

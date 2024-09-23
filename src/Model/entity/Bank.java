@@ -13,8 +13,9 @@ import lombok.experimental.SuperBuilder;
 @ToString
 
 
-public class StockRoom {
-    private int stockRoomID;
-    private int count;
-    private Product product;
+public class Bank {
+    private int bankID;
+    private String bankName;
+    private String accountNumber;
+    private double bankAmount;
 }

@@ -16,6 +16,6 @@ public class Product {
     private int productID;
     private String productName;
     private String brand;
-    private int price;
-    private StockRoom stockRoom1;
+    private double price;
+    private String barcode;
 }

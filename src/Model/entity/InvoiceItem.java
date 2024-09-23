@@ -15,6 +15,6 @@ import lombok.experimental.SuperBuilder;
 public class InvoiceItem {
     private int invoiceItemID;
     private int count;
-    private Person person1;
-    private Product product2;
+    private Product product;
+    private Invoice invoice;
 }

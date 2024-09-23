@@ -6,7 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Getter
@@ -18,8 +19,10 @@ import java.sql.Timestamp;
 
 public class Invoice {
     private int invoiceID;
-    private Timestamp invoiceDate;
+    private LocalDateTime invoiceDateTime;
     private double totalAmount;
+    private Person person;
     private InvoiceType invoiceType;
-    private InvoiceItem invoiceItem1;
+    private List<InvoiceItem> invoiceItemList;
+    private ShoppingType shoppingType;
 }
