@@ -18,7 +18,7 @@ import java.util.List;
 
 
 public class Invoice {
-    private int invoiceID;
+    private int ID;
     private LocalDateTime invoiceDateTime;
     private double totalAmount;
     private Person person;

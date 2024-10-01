@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,8 +23,21 @@ public class PersonDa implements DataAccess<Person , Integer>{
     public void save(Person person) throws Exception {
         connection = JdbcProvider.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(
-                "select PRSON_SEQ.nextval from dual"
+                "SELECT PERSON_SEQ.nextval AS NEXT_ID FROM dual"
         );
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        person.setID(resultSet.getInt("NEXT_ID"));
+
+        preparedStatement=connection.prepareStatement(
+                "INSERT INTO PERSON_TBL VALUES (?,?,?,?,?,?,?,?,?,?)"
+        );
+        preparedStatement.setInt(1, person.getID());
+        preparedStatement.setString(2, person.getFirstName());
+        preparedStatement.setString(3, person.getLastName());
+        preparedStatement.setString(4, person.getNationalID());
+        preparedStatement.setString(5, person.getPhoneNumber());
+        preparedStatement.setString(6, person.getRole().name());
     }
 
     @Override

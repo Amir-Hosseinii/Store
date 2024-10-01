@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 
 
 public class Delivery {
-    private int deliveryID;
+    private int ID;
     private Invoice invoice;
     private String address;
     private LocalDateTime sendDateTime;

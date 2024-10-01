@@ -14,8 +14,7 @@ import lombok.experimental.SuperBuilder;
 
 
 public class Bank {
-    private int bankID;
-    private String bankName;
+    private String Name;
     private String accountNumber;
-    private double bankAmount;
+    private double Amount;
 }

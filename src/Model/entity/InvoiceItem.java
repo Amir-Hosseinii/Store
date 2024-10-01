@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @ToString
 
 public class InvoiceItem {
-    private int invoiceItemID;
+    private int ID;
     private int count;
     private Product product;
     private Invoice invoice;

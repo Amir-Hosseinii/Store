@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 
 
 public class StockRoom {
-    private int stockRoomID;
+    private int ID;
     private int count;
     private Product product;
 }

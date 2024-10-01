@@ -13,9 +13,9 @@ import lombok.experimental.SuperBuilder;
 @ToString
 
 public class Product {
-    private int productID;
-    private String productName;
+    private int ID;
+    private String Name;
     private String brand;
     private double price;
-    private String barcode;
+    private int barcode;
 }

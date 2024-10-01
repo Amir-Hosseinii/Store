@@ -13,13 +13,14 @@ import lombok.experimental.SuperBuilder;
 @ToString
 
 public class Person {
-    private int personID;
-    private String personFirstName;
-    private String personLastName;
+    private int ID;
+    private String FirstName;
+    private String LastName;
+    private String nationalID;
     private String phoneNumber;
-    private String nationalCode;
     private Role role;
     private boolean status;
     private String userName;
     private String password;
+    private String accessLevel;
 }
