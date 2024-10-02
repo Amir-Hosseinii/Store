@@ -2,7 +2,6 @@ package Model.da;
 
 import Model.entity.DeliverStatus;
 import Model.entity.Delivery;
-import Model.entity.Product;
 import Model.tools.JdbcProvider;
 import lombok.extern.log4j.Log4j;
 
@@ -11,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Log4j
@@ -128,6 +126,7 @@ public class DeliveryDa implements DataAccess<Delivery , Integer>{
 
     @Override
     public void close() throws Exception {
-
+        preparedStatement.close();
+        connection.close();
     }
 }

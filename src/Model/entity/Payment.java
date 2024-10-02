@@ -19,6 +19,6 @@ import java.time.LocalDateTime;
 public class Payment {
     private int ID;
     private LocalDateTime paymentDateTime;
-    private Invoice invoice;
     private double amount;
+    private Invoice invoice;
 }
