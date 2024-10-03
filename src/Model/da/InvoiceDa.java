@@ -120,6 +120,11 @@ public class InvoiceDa implements DataAccess<Invoice , Integer>{
         return invoice;
     }
 
+
+    //todo: how to write based on findByDateRange ???
+//    @Override
+//    public List<Invoice> findByDateRange() throws Exception {}
+
     @Override
     public void close() throws Exception {
         preparedStatement.close();

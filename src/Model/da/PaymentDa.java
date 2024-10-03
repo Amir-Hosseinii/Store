@@ -113,6 +113,10 @@ public class PaymentDa implements DataAccess<Payment , Integer>{
         return payment;
     }
 
+
+    //todo: how to write based on findByAmount???
+  //  findByAmount()
+
     @Override
     public void close() throws Exception {
         preparedStatement.close();

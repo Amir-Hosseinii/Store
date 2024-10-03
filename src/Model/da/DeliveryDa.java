@@ -125,6 +125,40 @@ public class DeliveryDa implements DataAccess<Delivery , Integer>{
     }
 
 
+    //todo: how to write based on paymentId???
+//    @Override
+//    public Delivery findByPaymentId(Integer id) throws Exception {
+//        connection = JdbcProvider.getInstance().getConnection();
+//        preparedStatement = connection.prepareStatement()
+//    }
+
+
+
+
+    public List<Delivery> findByStatus(String deliverStatus) throws Exception {
+        connection = JdbcProvider.getInstance().getConnection();
+        preparedStatement = connection.prepareStatement(
+                "SELECT * FROM DELIVERY_TBL WHERE DELIVER_STATUS=?"
+        );
+        ResultSet resultSet = preparedStatement.executeQuery();
+        List<Delivery> deliveryList = new ArrayList<>();
+
+        while (resultSet.next()){
+            Delivery delivery=
+                    Delivery
+                            .builder()
+                            .ID(resultSet.getInt("ID"))
+                            .address(resultSet.getString("ADDRESS"))
+                            .sendDateTime(resultSet.getTimestamp("SEND_DATE_TIME").toLocalDateTime())
+                            .deliveredDateTime(resultSet.getTimestamp("DELIVERED_DATE_TIME").toLocalDateTime())
+                            .receiver(resultSet.getString("RECEIVER"))
+                            .deliverStatus(DeliverStatus.valueOf(resultSet.getString("DELIVER_STATUS")))
+                            .build();
+            deliveryList.add(delivery);
+        }
+        log.info("delivery list found by status");
+        return deliveryList;
+    }
 
 
 

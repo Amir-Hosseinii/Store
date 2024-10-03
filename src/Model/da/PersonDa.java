@@ -1,6 +1,5 @@
 package Model.da;
 
-
 import Model.entity.Person;
 import Model.tools.JdbcProvider;
 import lombok.extern.log4j.Log4j;
@@ -38,6 +37,7 @@ public class PersonDa implements DataAccess<Person , Integer>{
         preparedStatement.setString(4, person.getNationalID());
         preparedStatement.setString(5, person.getPhoneNumber());
         preparedStatement.setString(6, person.getRole().name());
+        //todo: فقط ادامه بخش سیو رو مشکل دارم
     }
 
     @Override

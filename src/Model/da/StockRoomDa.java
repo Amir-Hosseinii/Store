@@ -107,6 +107,19 @@ public class StockRoomDa implements DataAccess<StockRoom , Integer>{
         return stockRoom;
     }
 
+
+
+    //todo: how to write based on findByCountLessThan???
+//    findByCountLessThan()
+
+
+
+
+    //todo: how to write based on findAvailable???
+//    findAvailable()
+
+
+
     @Override
     public void close() throws Exception {
         preparedStatement.close();
