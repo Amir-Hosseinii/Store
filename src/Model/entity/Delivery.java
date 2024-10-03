@@ -18,10 +18,10 @@ import java.time.LocalDateTime;
 
 public class Delivery {
     private int ID;
-    private Invoice invoice;
     private String address;
     private LocalDateTime sendDateTime;
     private LocalDateTime deliveredDateTime;
     private DeliverStatus deliverStatus;
     private String receiver;
+    private Payment payment;
 }
