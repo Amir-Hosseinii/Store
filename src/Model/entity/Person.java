@@ -19,8 +19,8 @@ public class Person {
     private String nationalID;
     private String phoneNumber;
     private Role role;
-    private boolean status; //validation??
+    private boolean status; //todo:validation??
     private String userName;
     private String password;
-    private String accessLevel; //validation??
+    private String accessLevel; //todo:validation??
 }
