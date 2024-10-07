@@ -7,8 +7,8 @@ public class PersonTest {
     public static void main(String[] args) {
         Person person = Person
                 .builder()
-                .personFirstName("ali")
-                .personLastName("alipour")
+                .FirstName("ali")
+                .LastName("alipour")
                 .build();
         System.out.println(person);
 

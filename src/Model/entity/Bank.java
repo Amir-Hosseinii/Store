@@ -14,6 +14,7 @@ import lombok.experimental.SuperBuilder;
 
 
 public class Bank {
+    private int id;
     private String Name;
     private String accountNumber;
     private double Amount;

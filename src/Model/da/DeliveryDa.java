@@ -30,7 +30,7 @@ public class DeliveryDa implements DataAccess<Delivery , Integer>{
         delivery.setID(resultSet.getInt("NEXT_ID"));
 
         preparedStatement=connection.prepareStatement(
-                "INSERT INTO delivery VALUES (?,?,?,?,?,?)"
+                "INSERT INTO DELIVERY_TBL VALUES (?,?,?,?,?,?)"
         );
         preparedStatement.setInt(1, delivery.getID());
         preparedStatement.setString(2, delivery.getAddress());
