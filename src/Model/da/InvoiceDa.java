@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -121,9 +122,31 @@ public class InvoiceDa implements DataAccess<Invoice , Integer>{
     }
 
 
-    //todo: how to write based on findByDateRange ???
-//    @Override
-//    public List<Invoice> findByDateRange() throws Exception {}
+    public List<Invoice> findByDateRange(LocalDateTime invoiceDateTime) throws Exception {
+        connection = JdbcProvider.getInstance().getConnection();
+        preparedStatement = connection.prepareStatement(
+                "SELECT * FROM INVOICE_TBL WHERE INVOICE_TIME=?"
+        );
+        preparedStatement.setString(1, String.valueOf(invoiceDateTime));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        List<Invoice> invoiceList = new ArrayList<>();
+        while (resultSet.next()) {
+            Invoice invoice=
+                    Invoice
+                            .builder()
+                            .ID(resultSet.getInt("ID"))
+                            .invoiceDateTime(resultSet.getTimestamp("INVOICE_DATE_TIME").toLocalDateTime())
+                            .totalAmount(resultSet.getDouble("TOTAL_AMOUNT"))
+                            .invoiceType(InvoiceType.valueOf(resultSet.getString("INVOICE_TYPE")))
+                            .shoppingType(ShoppingType.valueOf(resultSet.getString("SHOPPING_TYPE")))
+                            .build();
+            invoiceList.add(invoice);
+        }
+        log.info("invoice found by dateRange");
+        return invoiceList;
+
+    }
+
 
     @Override
     public void close() throws Exception {
