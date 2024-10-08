@@ -35,7 +35,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
         preparedStatement.setString(2, product.getName());
         preparedStatement.setString(3, product.getBrand());
         preparedStatement.setDouble(4, product.getPrice());
-        preparedStatement.setInt(5, product.getBarcode());
+        preparedStatement.setString(5, product.getBarcode());
         preparedStatement.execute();
 
         log.info("product saved");
@@ -50,7 +50,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
         preparedStatement.setString(1, product.getName());
         preparedStatement.setString(2, product.getBrand());
         preparedStatement.setDouble(3, product.getPrice());
-        preparedStatement.setInt(4, product.getBarcode());
+        preparedStatement.setString(4, product.getBarcode());
         preparedStatement.setInt(5, product.getID());
         preparedStatement.execute();
 
@@ -86,7 +86,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
                             .Name(resultSet.getString("NAME"))
                             .brand(resultSet.getString("BRAND"))
                             .price(resultSet.getDouble("PRICE"))
-                            .barcode(resultSet.getInt("BARCODE"))
+                            .barcode(resultSet.getString("BARCODE"))
                             .build();
             productList.add(product);
         }
@@ -111,7 +111,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
                             .Name(resultSet.getString("NAME"))
                             .brand(resultSet.getString("BRAND"))
                             .price(resultSet.getDouble("PRICE"))
-                            .barcode(resultSet.getInt("BARCODE"))
+                            .barcode(resultSet.getString("BARCODE"))
                             .build();
         }
         log.info("product found by id");
@@ -134,7 +134,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
                             .Name(resultSet.getString("NAME"))
                             .brand(resultSet.getString("BRAND"))
                             .price(resultSet.getDouble("PRICE"))
-                            .barcode(resultSet.getInt("BARCODE"))
+                            .barcode(resultSet.getString("BARCODE"))
                             .build();
             productList.add(product);
         }
@@ -159,7 +159,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
                             .Name(resultSet.getString("NAME"))
                             .brand(resultSet.getString("BRAND"))
                             .price(resultSet.getDouble("PRICE"))
-                            .barcode(resultSet.getInt("BARCODE"))
+                            .barcode(resultSet.getString("BARCODE"))
                             .build();
             productList.add(product);
         }
@@ -183,7 +183,7 @@ public class ProductDa implements DataAccess<Product , Integer>{
                             .Name(resultSet.getString("NAME"))
                             .brand(resultSet.getString("BRAND"))
                             .price(resultSet.getDouble("PRICE"))
-                            .barcode(resultSet.getInt("BARCODE"))
+                            .barcode(resultSet.getString("BARCODE"))
                             .build();
         }
         log.info("product found by barcode");

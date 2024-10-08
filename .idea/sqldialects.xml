@@ -8,7 +8,7 @@
     <file url="file://$PROJECT_DIR$/src/Model/da/Payment.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/Model/da/Person.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/Model/da/Product.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/Model/da/StockRoom.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/src/Model/da/StockRoom.sql" dialect="GenericSQL" />
   </component>
   <component name="SqlResolveMappings">
     <file url="file://$PROJECT_DIR$/src/Model/da/StockRoom.sql" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />

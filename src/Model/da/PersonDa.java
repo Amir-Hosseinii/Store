@@ -42,7 +42,6 @@ public class PersonDa implements DataAccess<Person , Integer>{
         preparedStatement.setString(4, person.getNationalID());
         preparedStatement.setString(5, person.getPhoneNumber());
         preparedStatement.setString(6, person.getRole().name());
-        //todo: فقط ادامه بخش سیو رو مشکل دارم
         preparedStatement.setString(7,person.getUserName());
         preparedStatement.setString(8,person.getPassword());
         preparedStatement.setBoolean(9,person.isStatus());
@@ -61,7 +60,6 @@ public class PersonDa implements DataAccess<Person , Integer>{
         preparedStatement.setString(3, person.getNationalID());
         preparedStatement.setString(4, person.getPhoneNumber());
         preparedStatement.setString(5, person.getRole().name());
-        //todo: فقط ادامه بخش سیو رو مشکل دارم
         preparedStatement.setString(6,person.getUserName());
         preparedStatement.setString(7,person.getPassword());
         preparedStatement.setBoolean(8,person.isStatus());

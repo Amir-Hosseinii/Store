@@ -17,5 +17,5 @@ public class Product {
     private String Name;
     private String brand;
     private double price;
-    private int barcode;
+    private String barcode;
 }

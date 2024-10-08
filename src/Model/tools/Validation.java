@@ -24,7 +24,7 @@ public class Validation {
     //todo: چجوری بنویسم  فقط 10 عدد وارد کنید و نباید کمتر یا بیشتر از 10 عدد نباشد
     //TODO: check this RegEx Pattern : ^\d{10}$
     public String nationalIDValidator(String nationalID) throws Exception{
-        if (Pattern.matches("^{3,20}+", nationalID)) {
+        if (Pattern.matches("^\\d{10}$", nationalID)) {
             return nationalID;
         }else {
             throw new Exception("Invalid nationalID");
@@ -32,7 +32,7 @@ public class Validation {
     }
 
     public String phoneNumberValidator(String phoneNumber) throws Exception{
-        if (Pattern.matches("" , phoneNumber)) {
+        if (Pattern.matches("^\\d{11}$" , phoneNumber)) {
             return phoneNumber;
         }else {
             throw new Exception("Invalid phoneNumber");
